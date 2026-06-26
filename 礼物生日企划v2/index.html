@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stardew Birthday Adventure</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="game-shell" aria-label="Stardew Birthday Adventure">
+      <canvas id="gameCanvas" width="960" height="640" aria-label="生日农场小游戏画面"></canvas>
+
+      <section id="topBar" class="top-bar" aria-label="游戏状态">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <span>Stardew Birthday Adventure</span>
+        </div>
+        <div class="progress" id="progressText">已发现 0 / 10 个礼物</div>
+        <button id="finalLetterButton" class="letter-button hidden" type="button">看生日信</button>
+        <button id="musicToggle" class="icon-button" type="button" aria-label="音乐开关" title="音乐开关">
+          <span id="musicIcon">♪</span>
+        </button>
+      </section>
+
+      <section id="introOverlay" class="intro-overlay">
+        <div class="intro-copy">
+          <p id="introLine">今天是一个特别的日子……</p>
+          <button id="continueButton" type="button">点击继续</button>
+        </div>
+      </section>
+
+      <section id="memoryModal" class="modal hidden" aria-modal="true" role="dialog">
+        <div class="pixel-dialog">
+          <div class="dialog-header">
+            <h1 id="memoryTitle">礼物标题</h1>
+            <button id="closeMemory" class="icon-button dark" type="button" aria-label="关闭" title="关闭">×</button>
+          </div>
+          <div id="memoryMedia" class="memory-media"></div>
+          <div id="memoryText" class="memory-text"></div>
+          <button id="memoryDone" class="dialog-button" type="button">收好这份回忆</button>
+        </div>
+      </section>
+
+      <section id="letterModal" class="modal hidden" aria-modal="true" role="dialog">
+        <div class="pixel-dialog final-letter">
+          <div class="dialog-header">
+            <h1>最终生日信</h1>
+            <button id="closeLetter" class="icon-button dark" type="button" aria-label="关闭" title="关闭">×</button>
+          </div>
+          <div id="letterText" class="letter-text"></div>
+          <button id="restartButton" class="dialog-button" type="button">重新开始冒险</button>
+        </div>
+      </section>
+
+      <div id="geeseBurst" class="geese-burst hidden" aria-hidden="true"></div>
+      <div id="toast" class="toast hidden" role="status"></div>
+    </main>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
